@@ -1,5 +1,6 @@
 body{
     background-image: url(../imagens/bg.jpg);
+    max-height: 100%;
 }
 
 div{
@@ -19,5 +20,5 @@ button{
     border: none;
     font-size: 150%;
     margin: 10vmax;
-    margin-top:5px;
+    margin-top: 5v;
 }
