@@ -1,0 +1,9 @@
+body{
+    cursor: url(../imagens/mata_mosquito.png),auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(../imagens/bg.jpg);
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
