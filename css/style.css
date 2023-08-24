@@ -1,0 +1,23 @@
+body{
+    cursor: url(../imagens/mata_mosquito.png);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url(../imagens/bg.jpg), cover;
+    min-height: fit-content;
+}
+
+.titulo{
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    background-image: url(../imagens/game.png);
+}
+
+.opcoes{
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+}
+
+#dificuldades{
+    cursor: default;
+}
