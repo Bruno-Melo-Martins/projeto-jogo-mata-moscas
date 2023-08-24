@@ -5,5 +5,19 @@ body{
     background-color: aquamarine;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    height: 587px;
+    margin: 0;
+}
+
+#adviso{
+    margin: 0 auto;
+    position: relative;
+    top: 40px;
+    width: fit-content;
+    font-size: 250%;
+    color: royalblue;
+    padding: 10px;
+}
+#adviso:hover{
+    color: blue;
 }

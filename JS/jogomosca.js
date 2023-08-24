@@ -40,3 +40,8 @@ function IniciarJogo(){
     }
 }
 
+function Iniciar(){
+    const dive = document.getElementById('adviso');
+    dive.remove()
+    alert('ois')
+}
