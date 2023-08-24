@@ -1,23 +1,65 @@
 body{
-    cursor: url(../imagens/mata_mosquito.png);
+    cursor: url(../imagens/mata_mosquito.png),auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: url(../imagens/bg.jpg), cover;
-    min-height: fit-content;
+    background-image: url(../imagens/bg.jpg);
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1017px;
 }
 
 .titulo{
-    width: fit-content;
-    height: fit-content;
-    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    margin: 10px auto;
     background-image: url(../imagens/game.png);
 }
 
+
+/*Botões*/
 .opcoes{
     width: fit-content;
     height: fit-content;
     margin: 0 auto;
+    text-align: center;
 }
 
 #dificuldades{
     cursor: default;
+    background-color: white;
+    width: 200px;
+    height: 40px;
+    border: none;
+}
+#dificuldades:after{
+    border: none;
+}
+#dificuldades:active{
+    border: none;
+}
+
+#iniciar{
+    width: 230px;
+    height: 50px;
+    border: none;
+    background-color: crimson;
+    transition: 0.4s;
+    color: white;
+    font-size: 150%;
+}
+#iniciar:hover{
+    background-color: orangered;
+    transition: 0.4s;
+}
+
+/*Rodape*/
+.rodape{
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.356);
+    color: white;
+    position: absolute;
+    top: 950px;
+    left: 450px;
+    right: 450px;
+    text-align: center;
 }
