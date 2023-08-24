@@ -33,7 +33,7 @@ function IniciarJogo(){
     }
     if(dificuldade == '4'){
         tempoJogo = 15
-        tempoJogo = 1.5
+        tempoMosca = 1.5
         moscas = 10
     }
     window.location.href='../jogomosca.html'
