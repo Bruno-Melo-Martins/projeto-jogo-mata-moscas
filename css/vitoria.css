@@ -8,17 +8,23 @@ div{
     position: center;
     padding: 50px;
     margin-left: 270px;
-    margin-top: -50px;
+    margin-top: -80px;
 }
 
 button{
     color: white;
-    background: black;
+    background-color: crimson;
     padding: 10px;
     height: 50px;
     width: 230px;
     border: none;
     font-size: 150%;
-    margin: 10vmax;
-    margin-top: 5v;
+    margin: 125px;
+    margin-top: -30px;
+    transition: 0.4s;
+    font-size: 150%;
+}
+button:hover{
+    background-color: orangered;
+    transition: 0.4s;
 }
