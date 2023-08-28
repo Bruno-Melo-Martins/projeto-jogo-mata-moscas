@@ -1,6 +1,7 @@
 body{
     background-image: url(../imagens/bg.jpg);
     max-height: 100%;
+    cursor: url(../imagens/mata_mosquito.png),auto;
 }
 
 div{
