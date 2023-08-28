@@ -1,21 +1,5 @@
-function IniciarJogo(){
-    aviso = 5
-    dificuldade = document.getElementById('dificuldades').value;
-    if(dificuldade == '0'){
-        x = setInterval(function(){
-            document.getElementById('aviso').style.backgroundColor='brown'
-            document.getElementById('aviso').style.color='white'
-            document.getElementById('aviso').innerHTML='Escolha uma dificuldade!';
-            i--;
-            if(i==0){
-                clearInterval(x);
-            }
-        },1000)
-        x = setTimeout(function(){
-            document.getElementById('aviso').style.backgroundColor='transparent';
-            document.getElementById('aviso').style.color='transparent';
-        },1000)
-    }else{
+function SelecaoDificuldade(){
+    dificuldade = (document.getElementById('dificuldades').value);
     if(dificuldade == '1'){
         tempoJogo = 20
         tempoMosca = 5
@@ -36,12 +20,19 @@ function IniciarJogo(){
         tempoMosca = 1.5
         moscas = 10
     }
-    window.location.href='../jogomosca.html'
-    }
 }
 
-function Iniciar(){
-    const dive = document.getElementById('adviso');
-    dive.remove()
-    alert('ois')
+function IniciarJogo(){
+    if(dificuldade == 0){
+        document.getElementById('aviso').innerHTML='Insira uma dificuldade válida';
+        segundo = 5;
+        relogio = setInterval(function desaparecer(){
+            segundo--;
+            if(segundo==0){
+                document.getElementById('aviso').innerHTML='';
+            }
+        },1000)
+    }else{
+        window.location.href='../jogomosca.html'
+    }
 }
