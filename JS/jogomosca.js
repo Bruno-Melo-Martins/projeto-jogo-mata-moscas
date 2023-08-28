@@ -30,9 +30,11 @@ function IniciarJogo(){
             segundo--;
             if(segundo==0){
                 document.getElementById('aviso').innerHTML='';
+                relogio = clearInterval;
             }
         },1000)
     }else{
         window.location.href='../jogomosca.html'
+        
     }
 }

@@ -3,12 +3,13 @@ body{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: url(../imagens/bg.jpg);
     background-color: aquamarine;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-size: cover;
     height: 587px;
     margin: 0;
 }
 
+/*
 #adviso{
     margin: 0 auto;
     position: relative;
@@ -20,4 +21,10 @@ body{
 }
 #adviso:hover{
     color: blue;
+}
+*/
+
+/*Imagens*/
+.mosquito1{
+    height: 100px;
 }
