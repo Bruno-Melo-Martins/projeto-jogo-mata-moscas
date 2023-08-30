@@ -53,17 +53,6 @@ body{
     border-right: white solid 2px;
 }
 #coracao1, #coracao2, #coracao3{
-    background-image: url(../imagens/coracao_cheio.png);
-    height: 28px;
-    width: 30px;
-    float: left;
-    align-self: center;
-}
-#coracaovazio{
-    background-image: url(../imagens/coracao_vazio.png);
-    height: 28px;
-    width: 30px;
-    float: left;
     align-self: center;
 }
 #relogio{

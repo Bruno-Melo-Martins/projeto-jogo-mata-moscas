@@ -6,17 +6,17 @@ function SelecaoDificuldade(){
         sessionStorage.setItem('moscas','5')
     }
     if(dificuldade == '2'){
-        sessionStorage.setItem('tempoJogo','18')
-        sessionStorage.setItem('tempoMosca','3')
+        sessionStorage.setItem('tempoJogo','16')
+        sessionStorage.setItem('tempoMosca','4')
         sessionStorage.setItem('moscas','6')
     }
     if(dificuldade == '3'){
-        sessionStorage.setItem('tempoJogo','16')
+        sessionStorage.setItem('tempoJogo','14')
         sessionStorage.setItem('tempoMosca','2')
-        sessionStorage.setItem('moscas','8')
+        sessionStorage.setItem('moscas','7')
     }
     if(dificuldade == '4'){
-        sessionStorage.setItem('tempoJogo','15')
+        sessionStorage.setItem('tempoJogo','10')
         sessionStorage.setItem('tempoMosca','1')
         sessionStorage.setItem('moscas','10')
     }
@@ -39,6 +39,17 @@ function Redirecionar(){
     }
 }
 
+cronometro = setInterval(function(){
+    
+    },1000)
+    
+
+//captar informações de sessionstorage
+let tempoJogo = sessionStorage.getItem('tempoJogo')
+let tempoMosca = sessionStorage.getItem('tempoMosca')
+let moscas = sessionStorage.getItem('moscas')
+
+var vida=4;
 var altura=0;
 var largura=0;
 function ajustaTamanhoPalco(){
@@ -97,7 +108,7 @@ function ladoAleatorio(){
     }
 }
 
-moscas=3
+
 function mataMosca(){
     document.getElementById('mosquito').remove()
     moscas--;
@@ -106,35 +117,29 @@ function mataMosca(){
     }
 }
 
-vida = 4
 function iniciarJogo(){
-    tempo=10;
-    cronometro = setInterval(function(){
-    document.getElementById('contador').innerHTML=tempo;
-    tempo--;
-    },1000)
-
     setInterval(function(){
-        if(document.getElementById('mosquito')){
-            document.getElementById('mosquito').remove();
-            vida = vida - 1
-            if(vida == 3){
-                coracao = document.getElementById('coracao3')
-                coracao.setAttribute('id','coracaovazio')
-            }   
-            if(vida == 2){
-                coracao = document.getElementById('coracao2')
-                coracao.setAttribute('id','coracaovazio')
-            }     
-            if(vida == 1){
-                coracao = document.getElementById('coracao3')
-                coracao.setAttribute('id','coracaovazio')
-            }            
-            if(vida == 0){
-                window.location.href='../gameover.html'
-            }   
+        document.getElementById('contador').innerHTML=tempoJogo;
+        if(tempoJogo % tempoMosca == 0 || tempoJogo == tempoMosca){
+            if(document.getElementById('mosquito')){
+                document.getElementById('mosquito').remove();
+                vida--;
+                if(vida == 3){
+                    coracao = document.getElementById('coracao3').src='../imagens/coracao_vazio.png'
+                }   
+                if(vida == 2){
+                    coracao = document.getElementById('coracao2').src='../imagens/coracao_vazio.png'
+                }     
+                if(vida == 1){
+                    coracao = document.getElementById('coracao1').src='../imagens/coracao_vazio.png'
+                }            
+                if(vida == 0){
+                    window.location.href='../gameover.html'
+                }   
+            }
+                posicaoRandomica();
         }
-            posicaoRandomica();
+        tempoJogo--;
     },1000)
 }
 
