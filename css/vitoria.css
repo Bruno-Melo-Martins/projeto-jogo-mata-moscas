@@ -1,14 +1,13 @@
 body{
     background-image: url(../imagens/bg.jpg);
-    max-height: 100%;
+    background-size: cover;
 }
 
-div{
+.imagem1{
     border: none;
     position: center;
     padding: 50px;
-    margin-left: 270px;
-    margin-top: -80px;
+    margin: 100px auto;
 }
 
 button{
