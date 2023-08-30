@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Mata Mosquito</title>
-    <script src="JS/jogo.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/stylejogo.css">
+    <script src="JS/jogomosca.js"></script>
 </head>
 <body onresize="ajustaTamanhoPalco()">
-    
     <script>
-        posicaoRandomica()
+        iniciarJogo()
     </script>
+
+    <div class="caixa">
+        <div id="coracao1"></div>
+        <div id="coracao2"></div>
+        <div id="coracao3"></div>
+        <div id="relogio">
+            <h3>Tempo:</h3>
+            <p id="contador"></p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
 </body>
 </html>

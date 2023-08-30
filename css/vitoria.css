@@ -1,15 +1,24 @@
 body{
     background-image: url(../imagens/bg.jpg);
-    max-height: 100%;
+    background-size: cover;
     cursor: url(../imagens/mata_mosquito.png),auto;
+    min-height: 600px;
 }
 
-div{
-    border: none;
-    position: center;
-    padding: 50px;
-    margin-left: 270px;
-    margin-top: -80px;
+.alinhamento{
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#imagem1{
+    background-image: url(../imagens/vitoria.png);
+    height: 500px;
+    width: 500px;
+}
+#imagem2{
+    background-image: url(../imagens/game_over.png);
+    height: 500px;
+    width: 500px;
 }
 
 button{
@@ -20,8 +29,6 @@ button{
     width: 230px;
     border: none;
     font-size: 150%;
-    margin: 125px;
-    margin-top: -30px;
     transition: 0.4s;
     font-size: 150%;
 }
