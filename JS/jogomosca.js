@@ -51,51 +51,117 @@ ajustaTamanhoPalco()
 console.log(altura, largura);
 
 function posicaoRandomica(){
-    var posicaoX=Math.floor(Math.random()*(largura-100));
-    var posicaoY=Math.floor(Math.random()*(altura-100));
+    var posicaoX=Math.floor(Math.random()*(largura-140));
+    var posicaoY=Math.floor(Math.random()*(altura-140));
 
     /*criar o nosso mosquito (
         elemento HTML) no DOM*/
         var mosquito=document.createElement('img');
         mosquito.src='../imagens/mosquito.png';
         document.body.appendChild(mosquito);
-        mosquito.setAttribute('id','mosquito1');
-        document.getElementById('mosquito1').style.position='absolute'
-        document.getElementById('mosquito1').style.left=posicaoX+'px'
-        document.getElementById('mosquito1').style.top=posicaoY+'px'
-        mosquito.setAttribute('onclick','numeroMosca()')
+        mosquito.className=tamanhoAleatorio()+' '+ladoAleatorio();
+        mosquito.style.position='absolute'
+        mosquito.style.left=posicaoX+'px'
+        mosquito.style.top=posicaoY+'px'
+        mosquito.setAttribute('onclick','mataMosca()')
+        mosquito.setAttribute('id','mosquito')
 }
 
-function numeroMosca(){
-    if(mosquitos = ''){
-        mosquitos = sessionStorage.getItem('moscas')
+/*Tamanho do penilongo*/
+function tamanhoAleatorio(){
+    var classe=Math.floor(Math.random()*3)
+    switch(classe){
+    case 0:
+        return 'mosquito1'
+    case 1:
+        return 'mosquito2'
+    case 2: 
+        return 'mosquito3'
     }
-    mosquitos--;
-    document.getElementById('mosquito1').remove();
-    if(mosquitos == 0){
+    /* Utilizando a seguinte formula há uma maior
+    variedade de tamanho de moscas
+    var tamanho=Math.floor(Math.random()*(140))
+    if(tamanho < 75){
+        tamanhoAleatorio()
+    }else{
+    document.getElementById('mosquito1').style.height=tamanho+'px'
+    }*/
+}
+
+function ladoAleatorio(){
+    var lado=Math.floor(Math.random()*2)
+    if(lado == 0){
+        return 'ladoA'
+    }else{
+        return 'ladoB'
+    }
+}
+
+moscas=3
+function mataMosca(){
+    document.getElementById('mosquito').remove()
+    moscas--;
+    if(moscas==0){
         window.location.href='../vitoria.html'
     }
 }
 
-var checagem = 50
+vida = 4
 function iniciarJogo(){
-    let tempoJogo = sessionStorage.getItem('tempoJogo')
-    let tempoMosca = sessionStorage.getItem('tempoMosca')
-    relogio = setInterval(function(){
-        document.getElementById('contador').innerHTML=tempoJogo
-        tempoJogo--;
-        if(checagem == 50){
-            posicaoRandomica()
-            checagem = 0
+    tempo=10;
+    cronometro = setInterval(function(){
+    document.getElementById('contador').innerHTML=tempo;
+    tempo--;
+    },1000)
+
+    setInterval(function(){
+        if(document.getElementById('mosquito')){
+            document.getElementById('mosquito').remove();
+            vida = vida - 1
+            if(vida == 3){
+                coracao = document.getElementById('coracao3')
+                coracao.setAttribute('id','coracaovazio')
+            }   
+            if(vida == 2){
+                coracao = document.getElementById('coracao2')
+                coracao.setAttribute('id','coracaovazio')
+            }     
+            if(vida == 1){
+                coracao = document.getElementById('coracao3')
+                coracao.setAttribute('id','coracaovazio')
+            }            
+            if(vida == 0){
+                window.location.href='../gameover.html'
+            }   
         }
-        checagem++;
-        if(checagem == tempoMosca){
-            document.getElementById('mosquito1').remove();
-            posicaoRandomica()
-            checagem = 0
-        }
-        if(tempoJogo == 0 || tempoJogo < 0){
-            window.location.href='../gameover.html'
-        }
+            posicaoRandomica();
     },1000)
 }
+
+/*
+function iniciarJogo(){
+    setInterval(function(){
+        document.getElementById('contador').innerHTML=segundo;
+        segundo--;
+        tempodetela++;
+        if(tempodetela == 5 && document.getElementById('mosquito')){
+            document.getElementById('mosquito').remove();
+            tempodetela = 1;
+            vida = vida - 1
+            if(vida == 2){
+                coracao = document.getElementById('coracao3')
+                coracao.setAttribute('id','coracaovazio')
+            }   
+            if(vida == 1){
+                coracao = document.getElementById('coracao2')
+                coracao.setAttribute('id','coracaovazio')
+            }            
+            if(vida == 0){
+                window.location.href='../gameover.html'
+            }   
+        }
+        if(tempodetela == 1){
+            posicaoRandomica();
+        }
+    },1000)
+}*/

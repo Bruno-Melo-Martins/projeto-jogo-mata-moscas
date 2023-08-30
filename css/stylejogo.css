@@ -24,7 +24,63 @@ body{
 }
 */
 
-/*Imagens*/
-#mosquito1{
-    height: 115px;
+/*Tamanho e direção*/
+.mosquito1{
+    height: 140px;
+}
+.mosquito2{
+    height: 110px;
+}
+.mosquito3{
+    height: 90px;
+}
+.ladoA{
+    transform: scaleX(-1);
+}
+.ladoB{
+    transform: scaleX(1);
+}
+
+/*HUD*/
+.caixa{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    padding: 15px;
+    background-color: rgba(252, 252, 252, 0.409);
+    border-top-right-radius: 10px;
+    border-top: white solid 2px;
+    border-right: white solid 2px;
+}
+#coracao1, #coracao2, #coracao3{
+    background-image: url(../imagens/coracao_cheio.png);
+    height: 28px;
+    width: 30px;
+    float: left;
+    align-self: center;
+}
+#coracaovazio{
+    background-image: url(../imagens/coracao_vazio.png);
+    height: 28px;
+    width: 30px;
+    float: left;
+    align-self: center;
+}
+#relogio{
+    float: left;
+    margin-left: 15px;
+}
+#relogio h3{
+    padding: 0;
+    margin: 0;
+}
+#relogio p{
+    padding: 0;
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: larger;
+}
+.clear{
+    clear: both;
 }
