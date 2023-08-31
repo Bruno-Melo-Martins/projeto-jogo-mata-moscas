@@ -1,8 +1,9 @@
+let dificuldade = 0
 function SelecaoDificuldade(){
     dificuldade = (document.getElementById('dificuldades').value);
     if(dificuldade == '1'){
         sessionStorage.setItem('tempoJogo','20')
-        sessionStorage.setItem('tempoMosca','5')
+        sessionStorage.setItem('tempoMosca','4')
         sessionStorage.setItem('moscas','3')
     }
     if(dificuldade == '2'){
@@ -140,31 +141,3 @@ function iniciarJogo(){
         tempoJogo--;
     },1000)
 }
-
-/*
-function iniciarJogo(){
-    setInterval(function(){
-        document.getElementById('contador').innerHTML=segundo;
-        segundo--;
-        tempodetela++;
-        if(tempodetela == 5 && document.getElementById('mosquito')){
-            document.getElementById('mosquito').remove();
-            tempodetela = 1;
-            vida = vida - 1
-            if(vida == 2){
-                coracao = document.getElementById('coracao3')
-                coracao.setAttribute('id','coracaovazio')
-            }   
-            if(vida == 1){
-                coracao = document.getElementById('coracao2')
-                coracao.setAttribute('id','coracaovazio')
-            }            
-            if(vida == 0){
-                window.location.href='../gameover.html'
-            }   
-        }
-        if(tempodetela == 1){
-            posicaoRandomica();
-        }
-    },1000)
-}*/
