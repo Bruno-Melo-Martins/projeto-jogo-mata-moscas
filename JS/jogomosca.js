@@ -3,22 +3,17 @@ function SelecaoDificuldade(){
     if(dificuldade == '1'){
         sessionStorage.setItem('tempoJogo','20')
         sessionStorage.setItem('tempoMosca','5')
-        sessionStorage.setItem('moscas','5')
+        sessionStorage.setItem('moscas','3')
     }
     if(dificuldade == '2'){
-        sessionStorage.setItem('tempoJogo','16')
-        sessionStorage.setItem('tempoMosca','4')
-        sessionStorage.setItem('moscas','6')
-    }
-    if(dificuldade == '3'){
         sessionStorage.setItem('tempoJogo','14')
         sessionStorage.setItem('tempoMosca','2')
-        sessionStorage.setItem('moscas','7')
+        sessionStorage.setItem('moscas','5')
     }
-    if(dificuldade == '4'){
+    if(dificuldade == '3'){
         sessionStorage.setItem('tempoJogo','10')
         sessionStorage.setItem('tempoMosca','1')
-        sessionStorage.setItem('moscas','10')
+        sessionStorage.setItem('moscas','9')
     }
 }
 
@@ -47,7 +42,7 @@ cronometro = setInterval(function(){
 //captar informações de sessionstorage
 let tempoJogo = sessionStorage.getItem('tempoJogo')
 let tempoMosca = sessionStorage.getItem('tempoMosca')
-let moscas = sessionStorage.getItem('moscas')
+let moscas = parseInt(sessionStorage.getItem('moscas'))
 
 var vida=4;
 var altura=0;
@@ -111,7 +106,7 @@ function ladoAleatorio(){
 
 function mataMosca(){
     document.getElementById('mosquito').remove()
-    moscas--;
+    moscas = moscas - 1
     if(moscas==0){
         window.location.href='../vitoria.html'
     }
@@ -120,7 +115,10 @@ function mataMosca(){
 function iniciarJogo(){
     setInterval(function(){
         document.getElementById('contador').innerHTML=tempoJogo;
-        if(tempoJogo % tempoMosca == 0 || tempoJogo == tempoMosca){
+        if(tempoJogo == 0){
+            window.location.href='../gameover.html'
+        }
+         if(tempoJogo % tempoMosca == 0 || tempoJogo == tempoMosca){
             if(document.getElementById('mosquito')){
                 document.getElementById('mosquito').remove();
                 vida--;
